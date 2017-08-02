@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="XamlManipulation.MainPage"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamlManipulation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:foundation="using:Windows.Foundation"
+    mc:Ignorable="d">
+    <Grid  Background="White" >
+        <Canvas Name="CanvasVisual"  >
+            <canvas:CanvasAnimatedControl  Update="CanvasVisual_Update" Name="animatedControl">
+            </canvas:CanvasAnimatedControl>
+        </Canvas>
+        <Canvas >
+            
+            <Rectangle Name="backRect" Fill="Transparent"  />
+            <Rectangle  Name="buttonRectangle" ManipulationMode="TranslateX"   
+                    ManipulationStarting ="Rectangle_ManipulationStarting_1"
+                    ManipulationDelta="Rectangle_ManipulationDelta_1"
+                    ManipulationCompleted="Rectangle_ManipulationCompleted_1"
+                    PointerEntered="CanvasVisual_PointerEntered"
+                    PointerExited="tapRectangle_PointerExited"                   
+                    Fill="Lime" Opacity="0.5"                   
+                    Width="128" Height="128"
+                    RadiusX="64" RadiusY="64" >
+            </Rectangle>
+            
+        </Canvas>
+
+        <Canvas x:Name="jhg"/>
+    </Grid>
+</Page>
